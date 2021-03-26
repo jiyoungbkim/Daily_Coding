@@ -1,9 +1,9 @@
-import Counter from "./Counter";
-import InputSample from "./InputSample";
+import React from 'react';
+import UserList from './UserList';
 
 function App() {
   return (
-    <InputSample />
+    <UserList />
   );
 }
 
