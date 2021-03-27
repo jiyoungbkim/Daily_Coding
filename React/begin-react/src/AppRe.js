@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer } from 'react';
+import React, { useCallback, useReducer, useRef } from 'react';
 import CreateUser from './CreateUser';
 import UserList from './UserList';
 
@@ -39,6 +39,11 @@ function reducer(state, action) {
           [action.name] : action.value
         }
       }
+    case 'CREATE_USER':
+      return {
+        inputs: initialState.inputs,
+        users: state.users.concat(action.user)
+      }
     default:
       throw new Error('Unhandled action');
   }
@@ -46,6 +51,7 @@ function reducer(state, action) {
 
 function AppRe() {
   const [ state, dispatch ] = useReducer(reducer, initialState);
+  const nextId = useRef(4);
   const { users } = state;
   const { username, email } = state.inputs;
 
@@ -58,12 +64,25 @@ function AppRe() {
     })
   }, []);
 
+  const onCreate = useCallback(()=> {
+    dispatch ({
+      type: 'CREATE_USER',
+      user: {
+        id: nextId.current,
+        username,
+        email
+      }
+    });
+    nextId.current += 1;
+  }, [username, email])
+
   return (
     <>
       <CreateUser
         username={username}
         email={email}
         onChange={onChange}
+        onCreate={onCreate}
       />
       <UserList 
         users={users} 
