@@ -7,7 +7,7 @@ import ContextSample from './ContextSample';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextSample />
+    <AppRe />
   </React.StrictMode>,
   document.getElementById('root')
 );
