@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import AppRe from './AppRe';
 import reportWebVitals from './reportWebVitals';
+import ContextSample from './ContextSample';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRe />
+    <ContextSample />
   </React.StrictMode>,
   document.getElementById('root')
 );
