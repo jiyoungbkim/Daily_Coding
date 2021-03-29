@@ -33,7 +33,6 @@ function reducer(state, action) {
   switch (action.type) {
     case 'CREATE_USER':
       return {
-        inputs: initialState.inputs,
         users: state.users.concat(action.user)
       }
     case 'TOGGLE_USER':
