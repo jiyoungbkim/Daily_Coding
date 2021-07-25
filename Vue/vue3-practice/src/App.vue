@@ -2,32 +2,24 @@
   <h1>{{ msg }}</h1>
   <input
     type="text"
-    v-model="msg" />
-  <!-- 한글일 경우는 v-model을 쓰면 한글자 완성이 되야 적용되므로 아래와 같이 작성한다 -->
-  <!-- :value="msg"  -->
-  <!-- @input="msg = $event.target.value" /> -->
-
-  <!-- @input="handler" /> -->
-
-  <h1>{{ checked }}</h1>
-  <input
-    type="checkbox"
-    v-model="checked" />
+    v-model.trim="msg" />
+    <!-- v-model.lazy="msg" /> -->
+    <!-- 값이 바뀌고 나서 엔터, 탭, 바깥쪽 클릭시 갱신 -->
+    <!-- :value="msg" -->
+    <!-- @change="msg = $event.target.value" /> -->
 </template>
 
 <script>
   export default {
     data() {
       return {
-        msg: 'Hello world!',
-        checked: false
+        msg: 'Hello'
       }
     },
-    // methods: {
-    //   handler(event) {
-    //     console.log(event.target.value)
-    //     this.msg = event.target.value
-    //   }
-    // }
+    watch: {
+      msg() {
+        // console.log(this.msg.trim())
+      }
+    }
   }
 </script>
