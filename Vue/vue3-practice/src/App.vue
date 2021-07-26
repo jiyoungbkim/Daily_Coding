@@ -3,7 +3,8 @@
   <Attribute />
   <Emit /> -->
   <!-- <Slot /> -->
-  <Provide />
+  <!-- <Provide /> -->
+  <Refs />
 </template>
 
 <script>
@@ -11,7 +12,8 @@
 // import Attribute from '~/Attribute.vue'
 // import Emit from '~/Emit.vue'
 // import Slot from '~/Slot.vue'
-import Provide from '~/Provide'
+// import Provide from '~/Provide'
+import Refs from '~/Refs'
 
 export default {
   components: {
@@ -19,7 +21,8 @@ export default {
     // Attribute,
     // Emit,
     // Slot
-    Provide
+    // Provide
+    Refs
   }
 }
 </script>
