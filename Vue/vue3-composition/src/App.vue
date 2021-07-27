@@ -1,13 +1,16 @@
 <template>
-  <HelloWorld />
+  <!-- <HelloWorld /> -->
+  <Props />
 </template>
 
 <script>
-import HelloWorld from '~/components/HelloWorld'
+// import HelloWorld from '~/components/HelloWorld'
+import Props from '~/Props'
 
 export default {
   components: {
-    HelloWorld
+    // HelloWorld
+    Props
   },
 }
 </script>
